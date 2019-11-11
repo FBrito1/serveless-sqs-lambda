@@ -63,7 +63,11 @@ module.exports.consumer = async (event, context) => {
 
       const payload = JSON.parse(Item.json)
 
-      console.log('payload', payload)
+      const data = { ...payload, id: dynamoId }
+
+      console.log('payload', data)
+
+      return data
     })
   )
 
